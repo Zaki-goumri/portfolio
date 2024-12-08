@@ -8,6 +8,7 @@ import { SiGithub, SiLinkedin } from 'react-icons/si'
 import Link from 'next/link'
 import React from 'react'
 import Alert from '@mui/material/Alert';
+import { env } from 'process'
 
 export default function ContactPage() {
  
@@ -18,7 +19,13 @@ export default function ContactPage() {
     setResult({message:'sending',severity:'info'});
     const formData = new FormData(event.target as HTMLFormElement);
 
-    formData.append("access_key", "720c02eb-10cd-402c-8946-0185d70fe734");
+    const apiKey = env.NEXT_PUBLIC_WEB3FORMS_API_KEY;
+    if (apiKey) {
+      formData.append("access_key", apiKey);
+    } else {
+      setResult({message:'API key is missing',severity:'error'});
+      return;
+    }
     try{
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
