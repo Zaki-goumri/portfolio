@@ -54,8 +54,7 @@ export default function SkillsPage() {
                 ))}
               </CardContent>
             </Card>
-            
-
+    
             <Card>
               <CardHeader>
                 <CardTitle>Backend Development</CardTitle>
