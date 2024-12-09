@@ -8,7 +8,6 @@ import { SiGithub, SiLinkedin } from 'react-icons/si'
 import Link from 'next/link'
 import React from 'react'
 import Alert from '@mui/material/Alert';
-import { env } from 'process'
 
 export default function ContactPage() {
  
