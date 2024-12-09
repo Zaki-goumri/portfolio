@@ -19,7 +19,7 @@ export default function ContactPage() {
     setResult({message:'sending',severity:'info'});
     const formData = new FormData(event.target as HTMLFormElement);
 
-    const apiKey = env.NEXT_PUBLIC_WEB3FORMS_API_KEY;
+    const apiKey = process.env.NEXT_PUBLIC_WEB3FORMS_API_KEY;
     if (apiKey) {
       formData.append("access_key", apiKey);
     } else {
