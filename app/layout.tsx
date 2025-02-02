@@ -19,16 +19,19 @@ export default function RootLayout({
 }) {
   
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en"  suppressHydrationWarning={true} >
       <body className={inter.className}>
+      
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-               <ParticleBackground /> 
-          <NavBar/>
+
+      
+        <NavBar/>
+        <ParticleBackground /> 
           {children}
         </ThemeProvider>
       </body>

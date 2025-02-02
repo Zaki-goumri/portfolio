@@ -4,6 +4,12 @@ import { Briefcase, LinkIcon } from 'lucide-react'
 
 const projects = [
   {
+    title: "Boumerdes Smart City (BSC) - Hackathon Project",
+    description: "Developed a tourism platform for Boumerdes visitors during a hackathon. Created an admin dashboard and contributed to backend development. The platform helps tourists find accommodations, book services, and explore tourist attractions. Features include a booking system for hotels and tourist spots, and a comprehensive dashboard for local authorities to manage tourism data.",
+    technologies: ["Next.js", "Tailwind CSS", "React", "Express.js", "MongoDB"],    
+    link: "https://github.com/BscApp"
+  },
+  {
     title: "Portfolio Website",
     description: "Personal portfolio website built with Next.js and Tailwind CSS, showcasing projects and skills.",
     technologies: ["Next.js", "Tailwind CSS", "React"],
@@ -12,16 +18,15 @@ const projects = [
   {
     title: "Aroma Barkery",
     description: "Catalogue for a bakery. Users can browse products,Contact the bakery .",
-    technologies: ["Next.js", "Tailwind CSS", "React","firebase"],    
+    technologies: ["Next.js", "Tailwind CSS", "React", "firebase"],    
     link: "https://github.com/Zaki-goumri/Aroma"
   },
   {
-  title: "SHOP.CO",
-  description: "An e-commerce web application built using Next.js for the front end and Express.js for the back end. This project demonstrates a modern, scalable approach to online shopping platforms.",
-  technologies: ["Next.js", "Tailwind CSS", "React","Express.js","MongoDB"],    
-  link: "https://github.com/Zaki-goumri/SHOP.CO"
-}
-  
+    title: "SHOP.CO",
+    description: "An e-commerce web application built using Next.js for the front end and Express.js for the back end. This project demonstrates a modern, scalable approach to online shopping platforms.",
+    technologies: ["Next.js", "Tailwind CSS", "React", "Express.js", "MongoDB"],    
+    link: "https://github.com/Zaki-goumri/SHOP.CO"
+  }
 ]
 
 export default function ExperiencePage() {

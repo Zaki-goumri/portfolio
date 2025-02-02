@@ -49,7 +49,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl font-bold mb-8">Contact</h1>
           <div className="grid gap-6 md:grid-cols-2">
-            <Card className='z-50'>
+            <Card className='z-20'>
               <CardHeader>
                 <CardTitle>Get in Touch</CardTitle>
               </CardHeader>

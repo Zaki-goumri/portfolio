@@ -1,5 +1,4 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Progress } from '@/components/ui/progress'
 import Image from 'next/image'
 
 const skills = {
@@ -14,7 +13,7 @@ const skills = {
     {name:'Bootstrap',level:60,logo:'/logos/bootstarp.svg',style:''} 
   ],
   backend: [
-    { name: 'Node.js', level: 80, logo: '/logos/nodejs.svg',style:'' },
+    { name: 'Node.js', level: 70, logo: '/logos/nodejs.svg',style:'' },
     { name: 'Express.js', level: 70, logo: '/logos/express.svg',style:'dark:invert' },
     { name: 'MongoDB', level: 70, logo: '/logos/mongodb.svg',style:'' },
     { name: 'PostgreSQL', level: 50, logo: '/logos/postgresql.svg',style:'' },
@@ -23,7 +22,7 @@ const skills = {
     { name: 'Git', level: 75, logo: '/logos/git.svg',style:'' },
     { name: 'Docker', level: 70, logo: '/logos/docker.svg' ,style:''},
     { name: 'VS Code', level: 80, logo: '/logos/vscode.svg',style:'' },
-    { name: 'Figma', level: 75, logo: '/logos/figma.svg',style:'' },
+    { name: 'Figma', level: 75, logo: '/logos/figma.svg',style:'h-16' },
     {name:'github',level:70,logo:'/logos/github.svg',style:'dark:invert'},
   ],
 }
@@ -39,18 +38,14 @@ export default function SkillsPage() {
               <CardHeader>
                 <CardTitle>Frontend Development</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 flex gap-x-28 justify-center flex-wrap">
                 {skills.frontend.map((skill) => (
-                  <div key={skill.name} className="flex items-center gap-4">
-                    <Image src={skill.logo} alt={skill.name} width={24} height={24} className={skill.style} />
-                    <div className="flex-grow">
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                  <div key={skill.name} className="flex flex-col justify-center ">
+                    <Image src={skill.logo} alt={skill.name} width={60} height={0} className={skill.style} />
+                    <div className="flex flex-col justify-center">
+                        <span className="text-sm font-medium text-center mt-4">{skill.name}</span>
                       </div>
-                      <Progress value={skill.level} className="h-2" />
                     </div>
-                  </div>
                 ))}
               </CardContent>
             </Card>
@@ -59,18 +54,14 @@ export default function SkillsPage() {
               <CardHeader>
                 <CardTitle>Backend Development</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 flex gap-x-28 justify-center flex-wrap">
                 {skills.backend.map((skill) => (
-                  <div key={skill.name} className="flex items-center gap-4">
-                    <Image src={skill.logo} alt={skill.name} width={24} height={24} className={skill.style} />
-                    <div className="flex-grow">
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                  <div key={skill.name} className="flex flex-col justify-center ">
+                    <Image src={skill.logo} alt={skill.name} width={60} height={0} className={skill.style} />
+                    <div className="flex flex-col justify-center">
+                        <span className="text-sm font-medium text-center mt-4">{skill.name}</span>
                       </div>
-                      <Progress value={skill.level} className="h-2" />
                     </div>
-                  </div>
                 ))}
               </CardContent>
             </Card>
@@ -79,18 +70,14 @@ export default function SkillsPage() {
               <CardHeader>
                 <CardTitle>Tools & Technologies</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 flex gap-x-28 justify-center flex-wrap">
                 {skills.tools.map((skill) => (
-                  <div key={skill.name} className="flex items-center gap-4">
-                    <Image src={skill.logo} alt={skill.name} width={24} height={24} className={skill.style} />
-                    <div className="flex-grow">
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm font-medium">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground">{skill.level}%</span>
+                  <div key={skill.name} className="flex flex-col justify-center ">
+                    <Image src={skill.logo} alt={skill.name} width={60} height={0} className={skill.style} />
+                    <div className="flex flex-col justify-center">
+                        <span className="text-sm font-medium text-center mt-4">{skill.name}</span>
                       </div>
-                      <Progress value={skill.level} className="h-2" />
                     </div>
-                  </div>
                 ))}
               </CardContent>
             </Card>
