@@ -51,8 +51,8 @@ export function HeroSection() {
                 </a>
 
               </Button>
-              <Button variant="ghost" size="icon" className="rounded-full" target='_blank'>
-                 <a href='https://www.instagram.com/_.zaki_____/'>
+              <Button variant="ghost" size="icon" className="rounded-full">
+                 <a href='https://www.instagram.com/_.zaki_____/' target='_blank'>
                 <Instagram className="w-5 h-5" />
                 </a>
               </Button>
