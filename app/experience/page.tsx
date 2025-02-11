@@ -26,6 +26,12 @@ const projects = [
     description: "An e-commerce web application built using Next.js for the front end and Express.js for the back end. This project demonstrates a modern, scalable approach to online shopping platforms.",
     technologies: ["Next.js", "Tailwind CSS", "React", "Express.js", "MongoDB"],    
     link: "https://github.com/Zaki-goumri/SHOP.CO"
+  },
+  {
+    title: "Trackiny",
+    description: "An innovative platform built with Next.js, Tailwind CSS, and TypeScript to lower costs and automate the transportation of goods. Our solution streamlines logistics and provides a dedicated driver app for real-time tracking, making the process easier and faster.",
+    technologies: ["Next.js", "Tailwind CSS", "React", "Django", "MySQL","TypeScript","Fast api","Firebase","React Leaflet"],    
+    link: "https://github.com/Tatweer-hackathon"
   }
 ]
 
