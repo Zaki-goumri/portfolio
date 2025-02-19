@@ -1,5 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Image from 'next/image'
+
+interface Skill {
+    
+    name: string
+    logo: string
+    style?: string
+}
+
 const skills = {
   frontend: [
     { name: 'React.js', logo: '/logos/react.svg' },
@@ -47,9 +55,9 @@ export default function SkillsPage() {
                 <CardTitle>Frontend Development</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 flex gap-x-28 justify-center flex-wrap">
-                {skills.frontend.map((skill) => (
+                {skills.frontend.map((skill:Skill) => (
                   <div key={skill.name} className="flex flex-col justify-center ">
-                    <Image src={skill.logo} alt={skill.name} width={60} height={0} className={skill.style} />
+                    <Image src={skill.logo} alt={skill.name} width={60} height={0} className={skill?.style} />
                     <div className="flex flex-col justify-center">
                         <span className="text-sm font-medium text-center mt-4">{skill.name}</span>
                       </div>

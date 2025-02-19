@@ -1,11 +1,8 @@
-import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 import { Metadata } from 'next';
 import { NavBar } from '@/components/nav-bar';
 import { ParticleBackground } from '@/components/particle-background';
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Zakaria GOUMRI',
@@ -20,8 +17,7 @@ export default function RootLayout({
   
   return (
     <html lang="en"  suppressHydrationWarning={true} >
-      <body className={inter.className}>
-      
+      <body  >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
