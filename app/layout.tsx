@@ -2,6 +2,7 @@ import './globals.css'
 import { Metadata } from 'next';
 import { NavBar } from '@/components/nav-bar';
 import { ParticleBackground } from '@/components/particle-background';
+import { ThemeProvider } from 'next-themes';
 
 export const metadata: Metadata = {
   title: 'Zakaria GOUMRI',
