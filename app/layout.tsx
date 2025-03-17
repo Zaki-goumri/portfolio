@@ -1,4 +1,3 @@
-import { ThemeProvider } from '@/components/theme-provider'
 import './globals.css'
 import { Metadata } from 'next';
 import { NavBar } from '@/components/nav-bar';
