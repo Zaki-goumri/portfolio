@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 10 10% 4%;
+    --foreground: 120 100% 85%;
+    --card: 10 10% 6%;
+    --card-foreground: 120 100% 85%;
+    --popover: 10 10% 4%;
+    --popover-foreground: 120 100% 85%;
+    --primary: 120 100% 55%;
+    --primary-foreground: 10 10% 4%;
+    --secondary: 10 10% 12%;
+    --secondary-foreground: 120 100% 85%;
+    --muted: 10 10% 8%;
+    --muted-foreground: 120 20% 65%;
+    --accent: 120 100% 55%;
+    --accent-foreground: 10 10% 4%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 10 10% 15%;
+    --input: 10 10% 15%;
+    --ring: 120 100% 55%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-mono;
+    background: #0a0a0a;
+    color: #39ff14;
+    font-family: "Fira Code", "Courier New", monospace;
+  }
+}
+
+.terminal-cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.glitch {
+  position: relative;
+  animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.neon-glow {
+  box-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 15px #39ff14;
+}
+
+.neon-text {
+  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 15px #39ff14;
+}
+
+.scan-lines {
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-lines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(transparent 50%, rgba(57, 255, 20, 0.03) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
