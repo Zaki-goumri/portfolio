@@ -41,6 +41,12 @@ const dashboardItems = [
     icon: GraduationCap,
     href: "/education",
     color: "from-orange-400 to-red-500",
+  },{
+    title: "CV",
+    description: "Complete resume overview",
+    icon: FileText,
+    href: "/cv",
+    color: "from-cyan-400 to-blue-500",
   },
   {
     title: "Contact",
