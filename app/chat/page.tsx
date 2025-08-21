@@ -134,9 +134,9 @@ export default function Chat() {
             </CardTitle>
           </CardHeader>
 
-          <CardContent className="flex-1 flex flex-col">
+          <CardContent className="flex-1 flex flex-col p-4">
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto space-y-4 mb-4 pr-2">
+            <div className="flex-1 overflow-y-auto space-y-4 mb-4 pr-2 max-h-[450px] min-h-0">
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -193,7 +193,7 @@ export default function Chat() {
             </div>
 
             {/* Input */}
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-shrink-0">
               <textarea
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
