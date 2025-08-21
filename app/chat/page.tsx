@@ -63,7 +63,7 @@ export default function Chat() {
           body: JSON.stringify({ question: input }),
         },
       );
-
+      console.log(response);
       if (!response.ok) {
         throw new Error("Failed to get response");
       }
