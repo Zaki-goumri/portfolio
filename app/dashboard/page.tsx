@@ -1,10 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Brain, FolderOpen, GraduationCap, Mail, Terminal, ArrowLeft, FileText, Computer } from "lucide-react"
-import { Footer } from "@/components/footer"
+import { useState } from "react";
+import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Brain,
+  FolderOpen,
+  GraduationCap,
+  Mail,
+  Terminal,
+  ArrowLeft,
+  FileText,
+  Computer,
+  BarChart3,
+} from "lucide-react";
+import { Footer } from "@/components/footer";
 
 const dashboardItems = [
   {
@@ -31,7 +47,7 @@ const dashboardItems = [
   {
     title: "Experience",
     description: "Professional background",
-    icon: Computer,
+    icon: BarChart3,
     href: "/experience",
     color: "from-purple-400 to-pink-500",
   },
@@ -41,12 +57,20 @@ const dashboardItems = [
     icon: GraduationCap,
     href: "/education",
     color: "from-orange-400 to-red-500",
-  },{
+  },
+  {
     title: "CV",
     description: "Complete resume overview",
     icon: FileText,
     href: "/cv",
     color: "from-cyan-400 to-blue-500",
+  },
+  {
+    title: "Chat",
+    description: "Ask me anything",
+    icon: Terminal,
+    href: "/chat",
+    color: "from-pink-400 to-rose-500",
   },
   {
     title: "Contact",
@@ -55,10 +79,10 @@ const dashboardItems = [
     href: "/contact",
     color: "from-yellow-400 to-orange-500",
   },
-]
+];
 
 export default function Dashboard() {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-black p-4 scan-lines">
@@ -75,9 +99,13 @@ export default function Dashboard() {
 
           <div className="flex items-center gap-3 mb-2">
             <Terminal className="w-8 h-8 text-green-400" />
-            <h1 className="text-3xl font-bold text-green-400 neon-text">Dashboard - Zakaria Goumri</h1>
+            <h1 className="text-3xl font-bold text-green-400 neon-text">
+              Dashboard - Zakaria Goumri
+            </h1>
           </div>
-          <p className="text-green-300">Backend Software Engineer • Node.js & NestJS Specialist</p>
+          <p className="text-green-300">
+            Backend Software Engineer • Node.js & NestJS Specialist
+          </p>
         </div>
 
         {/* Dashboard Grid */}
@@ -104,9 +132,13 @@ export default function Dashboard() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-green-300/80">{item.description}</CardDescription>
+                  <CardDescription className="text-green-300/80">
+                    {item.description}
+                  </CardDescription>
                   {hoveredCard === index && (
-                    <div className="mt-3 text-green-400 text-sm animate-fade-in">Click to access →</div>
+                    <div className="mt-3 text-green-400 text-sm animate-fade-in">
+                      Click to access →
+                    </div>
                   )}
                 </CardContent>
               </Card>
@@ -119,7 +151,8 @@ export default function Dashboard() {
           <div className="text-green-400 text-sm font-mono">
             <div>system@portfolio:~$ uptime</div>
             <div className="text-green-300 mt-1">
-              Portfolio active • Last update: January 2025 • Status: <span className="text-green-400">Online</span>
+              Portfolio active • Last update: January 2025 • Status:{" "}
+              <span className="text-green-400">Online</span>
             </div>
           </div>
         </div>
@@ -127,5 +160,5 @@ export default function Dashboard() {
         <Footer />
       </div>
     </div>
-  )
+  );
 }
