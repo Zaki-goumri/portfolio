@@ -86,17 +86,13 @@ export default function Articles() {
               currently preparing a series of technical articles based on
               real-world projects and challenges.
             </p>
-            <div className="flex items-center gap-2 text-blue-300">
-              <Clock className="w-4 h-4" />
-              <span className="text-sm">First articles launching soon</span>
-            </div>
           </CardContent>
         </Card>
 
         {/* Upcoming Articles */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-green-400 mb-6">
-            Upcoming Articles
+            My Articles
           </h2>
           <div className="space-y-6">
             {upcomingArticles.map((article, index) => (
