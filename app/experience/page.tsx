@@ -7,38 +7,68 @@ import { ArrowLeft, Briefcase, Calendar, MapPin, TrendingUp } from "lucide-react
 import { Footer } from "@/components/footer"
 
 const experiences = [
+
+   {
+    title: "Back-End Engineer",
+    company: "Tyrhal (ترحال)",
+    type: "Production System · Remote",
+    period: "Dec 2025 – Present",
+    achievements: [
+      "Designed and built scalable backend services using NestJS for travel packages, agencies, bookings, and users",
+      "Implemented approval workflows and content moderation for agencies and travel packages",
+      "Built package availability and pricing logic (available, on-discount, unavailable) with strong validation rules",
+      "Developed optimized PostgreSQL queries and Prisma data models for high-performance filtering and search",
+      "Worked on production-grade API endpoints used by real customers and travel agencies",
+    ],
+    technologies: ["NestJS", "TypeScript", "PostgreSQL", "Prisma", "REST APIs", "System Design", "DigitalOcean"],
+    color: "from-indigo-500 to-blue-600",
+  },
   {
     title: "Backend Developer",
     company: "Portals - Event Management Platform",
     type: "Freelance, Remote",
     period: "Feb 2025 – May 2025",
     achievements: [
-      "Engineered backend services in NestJS, PostgreSQL, Prisma, processing 100k+ event records with sub-200ms API responses",
-      "Implemented real-time notification system (SSE), boosting attendee engagement by 35%",
+      "Engineered backend services in NestJS, PostgreSQL, Prisma",
+      "Implemented real-time notification system (SSE)",
       "Designed optimized database schemas to handle high-volume concurrent traffic",
-      "Delivered analytics APIs powering dashboards for 500+ monthly active users",
-      "Automated deployments via GitHub Actions and containerized with Docker",
+      "Delivered analytics APIs powering dashboards for users",
     ],
     technologies: ["NestJS", "PostgreSQL", "Prisma", "SSE", "Docker", "GitHub Actions"],
     color: "from-blue-500 to-cyan-500",
   },
+
   {
-    title: "Full-Stack Engineer",
-    company: "GrowPath - Student-Company Matching Platform",
-    type: "University Capstone Project",
-    period: "Jan 2025 – Apr 2025",
+    title: "Backend Engineer",
+    company: "Ammerli",
+    type: "Freelance",
+    period: "Sep 2025 - Present",
     achievements: [
-      "Led frontend development in React, TypeScript, Tailwind CSS with REST API integration",
-      "Delivered platform enabling 200+ internship matches",
-      "Implemented responsive design and user-friendly interface",
-      "Integrated backend APIs for seamless data flow",
+      "Engineered comprehensive backend for a delivery and service mobile application",
+      "Built scalable architecture using NestJS, TypeORM, and PostgreSQL",
+      "Integrated Chargili payments, OTP SMS, and FCM notifications",
+      "Implemented robust infrastructure with Docker, MinIO storage, and automated backups",
+      "Optimized performance with Redis caching and conducted k6 load testing",
     ],
-    technologies: ["React", "TypeScript", "Tailwind CSS", "REST API"],
-    color: "from-green-500 to-emerald-500",
+    technologies: ["NestJS", "TypeORM", "PostgreSQL", "Redis", "Docker", "MinIO", "Grafana", "k6", "FCM"],
+    color: "from-purple-600 to-indigo-600",
   },
 ]
 
 const hackathons = [
+  {
+    title: "Assurini – FutureCaravans Hackathon",
+    date: "Sep 2025",
+    description: "A next-gen, tech-boosted insurance platform transforming the car accident experience.",
+    achievements: [
+      "Streamlined claims process by connecting multiple insurance companies",
+      "Developed AI agent for accident scene reconstruction and damage estimation",
+      "Built user-friendly mobile app with modern UI",
+      "Delivered complex MVP in 48 hours",
+    ],
+    technologies: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "Graphql", "Kafka", "Redis", "Docker"],
+    color: "from-teal-500 to-emerald-500",
+  },
   {
     title: "Boumerdes Smart City (BSC)",
     date: "Nov 2024",
@@ -52,7 +82,7 @@ const hackathons = [
   },
   {
     title: "IntelliPower – AI Security System",
-    date: "2024",
+    date: "April 2025",
     description: "Designed IoT architecture integrating AI-based facial recognition",
     achievements: [
       "Rendered sensor layouts in 3D visualizations",
@@ -63,7 +93,7 @@ const hackathons = [
   },
   {
     title: "Qurbani Management Platform – JunctionX Algiers Winner",
-    date: "Jul 2025",
+    date: "Apr 2025",
     description: "Hackathon-winning platform enabling AI-based sacrifice video validation and transparent donation tracking.",
     achievements: [
       "Trained AI model to detect sheep presence and donor name in sacrifice videos",

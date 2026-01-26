@@ -67,7 +67,7 @@ const dashboardItems = [
   },
   {
     title: "Chat",
-    description: "Ask me anything",
+    description: "Ask my chatbot anything",
     icon: Terminal,
     href: "/chat",
     color: "from-pink-400 to-rose-500",

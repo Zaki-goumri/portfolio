@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, FolderOpen, ExternalLink, Github, Calendar, Users, TrendingUp } from "lucide-react"
+import { ArrowLeft, FolderOpen, ExternalLink, Github, Calendar, Users, TrendingUp, Shield, Code, Blocks, Smartphone } from "lucide-react"
 import { Footer } from "@/components/footer"
 
 type Project = {
@@ -24,28 +24,27 @@ type Project = {
 
 const projects: Project[] = [
   {
-    id: 1,
-    title: "Portals - Event Management Platform",
+    id: 10,
+    title: "Ammerli",
     type: "Professional Project",
-    period: "Feb 2025 – May 2025",
-    description: "Scalable backend services for event management with real-time features and high-performance APIs.",
+    period: "2024",
+    description: "Comprehensive backend for a delivery and service mobile application, built for scale and reliability.",
     highlights: [
-      "Processing 100k+ event records with sub-200ms API responses",
-      "Real-time notification system (SSE) boosting engagement by 35%",
-      "Analytics APIs powering dashboards for 500+ monthly active users",
-      "Optimized database schemas for high-volume concurrent traffic",
+      "Scalable NestJS architecture with TypeORM and PostgreSQL",
+      "Integrated Chargili payments, OTP SMS, and FCM notifications",
+      "Robust infrastructure with Docker, MinIO storage, and automated backups",
+      "Performance optimized with Redis caching and k6 load testing",
     ],
-    technologies: ["NestJS", "PostgreSQL", "Prisma", "SSE", "Docker", "GitHub Actions"],
+    technologies: ["NestJS", "TypeORM", "PostgreSQL", "Redis", "Docker", "MinIO", "Grafana", "k6", "FCM"],
     metrics: {
-      type:'Event management',
-      users: "100k+",
-      response: "<200ms",
+      reliability: "Automated backups",
+      monitoring: "Grafana dashboards",
+      testing: "k6 load tested",
     },
-    color: "from-blue-500 to-cyan-500",
-    icon: TrendingUp,
-    github: "",
-    demo: "",
-  },
+    color: "from-purple-600 to-indigo-600",
+    icon: Smartphone,
+    demo: "https://play.google.com/store/apps/details?id=com.islam.ammerli",
+  },  
   {
     id: 4,
     title: "IntelliPower – AI Security System",
@@ -66,7 +65,7 @@ const projects: Project[] = [
     },
     color: "from-orange-500 to-red-500",
     icon: FolderOpen,
-    github:'https://github.com/Nest-hackathon-app/IntelliPower-back'
+    github: 'https://github.com/Nest-hackathon-app/IntelliPower-back'
   },
   {
     id: 5,
@@ -88,7 +87,7 @@ const projects: Project[] = [
     },
     color: "from-yellow-500 to-amber-500",
     icon: FolderOpen,
-    github:'https://github.com/Junction-Hackathon'
+    github: 'https://github.com/Junction-Hackathon'
   },
   {
     id: 6,
@@ -110,8 +109,71 @@ const projects: Project[] = [
     },
     color: "from-indigo-500 to-sky-500",
     icon: FolderOpen,
-    github:'https://github.com/Zaki-goumri/ptu-learning-platform-back'
+    github: 'https://github.com/Zaki-goumri/ptu-learning-platform-back'
   },
+  {
+    id: 7,
+    title: "Assurini",
+    type: "Hackathon Project",
+    period: "2024",
+    description: "Next-gen insurance platform with AI accident reconstruction transforming the car accident experience.",
+    highlights: [
+      "Streamlined claims process connecting multiple insurers",
+      "AI agent for accident scene reconstruction and damage estimation",
+      "User-friendly mobile app with modern UI",
+      "Delivered complex MVP in 48 hours",
+    ],
+    technologies: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "GraphQL", "Kafka", "Redis", "Docker"],
+    metrics: {
+      time: "48 hours",
+      ai: "Scene reconstruction",
+      platform: "Mobile + Web",
+    },
+    color: "from-teal-500 to-emerald-500",
+    icon: Shield,
+    github: "https://github.com/Zaki-goumri/future-caravan",
+  },
+  {
+    id: 8,
+    title: "NestJS Chargili",
+    type: "Personal Project",
+    period: "2024",
+    description: "Backend service for Chargili, a payment and charging system built with scalability in mind.",
+    highlights: [
+      "Built with NestJS for modular architecture",
+      "Implemented secure payment processing flows",
+      "RESTful API design with comprehensive validation",
+    ],
+    technologies: ["NestJS", "TypeScript", "REST API"],
+    metrics: {
+      type: "Backend API",
+      framework: "NestJS",
+    },
+    color: "from-red-500 to-orange-500",
+    icon: Code,
+    github: "https://github.com/Zaki-goumri/nestjs-chargili",
+  },
+  {
+    id: 9,
+    title: "Tip Jar Blockchain",
+    type: "Web3 Project",
+    period: "2024",
+    description: "Small decentralized tip jar application allowing users to send tips via the blockchain.",
+    highlights: [
+      "Smart contract development with Solidity",
+      "Secure transaction handling on the Ethereum network",
+      "Web3 integration for wallet connection",
+    ],
+    technologies: ["Solidity", "Blockchain", "Web3", "Ethereum"],
+    metrics: {
+      type: "DApp",
+      network: "Ethereum",
+    },
+    color: "from-yellow-500 to-amber-500",
+    icon: Blocks,
+    github: "https://github.com/Zaki-goumri/Tip-jar-blokchain",
+  },
+  
 ] as const;
 
 export default function Projects() {
@@ -206,26 +268,26 @@ export default function Projects() {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 pt-2">
-  {project.github && (
-    <Button
-      className="bg-transparent border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all duration-300 neon-glow"
-      onClick={() => window.open(project.github, "_blank")}
-    >
-      <Github className="w-4 h-4 mr-2" />
-      View on GitHub
-    </Button>
-  )}
-  {project.demo && (
-    <Button
-      variant="outline"
-      className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-black bg-transparent"
-      onClick={() => window.open(project.demo, "_blank")}
-    >
-      <ExternalLink className="w-4 h-4 mr-2" />
-      Live Demo
-    </Button>
-  )}
-</div>
+                  {project.github && (
+                    <Button
+                      className="bg-transparent border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all duration-300 neon-glow"
+                      onClick={() => window.open(project.github, "_blank")}
+                    >
+                      <Github className="w-4 h-4 mr-2" />
+                      View on GitHub
+                    </Button>
+                  )}
+                  {project.demo && (
+                    <Button
+                      variant="outline"
+                      className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-black bg-transparent"
+                      onClick={() => window.open(project.demo, "_blank")}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Live Demo
+                    </Button>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}
@@ -237,16 +299,12 @@ export default function Projects() {
             <CardTitle className="text-green-400 text-xl">Portfolio Summary</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-2 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-400">{projects.length}</div>
                 <div className="text-green-300 text-sm">Total Projects</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-purple-400">+100K</div>
-                <div className="text-green-300 text-sm">Users Served</div>
-              </div>
-              <div className="text-center">
+               <div className="text-center">
                 <div className="text-3xl font-bold text-orange-400">2+</div>
                 <div className="text-green-300 text-sm">Years Experience</div>
               </div>

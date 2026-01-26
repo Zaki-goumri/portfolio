@@ -4,8 +4,10 @@ import { useState } from "react"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Code, Database, Cloud, Shield, TestTube, Monitor } from "lucide-react"
+import { ArrowLeft, Code, Database, Cloud, Shield, TestTube, Monitor, Blocks } from "lucide-react"
 import { Footer } from "@/components/footer"
+
+
 
 const skillCategories = [
   {
@@ -20,7 +22,6 @@ const skillCategories = [
       "REST API",
       "Microservices",
       "Monolithic",
-      "SSE",
       "WebSockets",
       "GraphQL",
     ],
@@ -35,13 +36,18 @@ const skillCategories = [
     title: "DevOps & Tools",
     icon: Cloud,
     color: "from-purple-500 to-pink-500",
-    skills: ["Docker", "CI/CD","Nginx", "Linux", "GitHub Actions", "ELK Stack", "Grafana"],
+    skills: ["Docker", "CI/CD", "Nginx", "Linux", "GitHub Actions", "ELK Stack", "Grafana"],
   },
   {
     title: "Programming Languages",
     icon: Monitor,
     color: "from-orange-500 to-red-500",
-    skills: ["JavaScript", "TypeScript", "Python","SQL"],
+    skills: ["JavaScript", "TypeScript", "Python", "SQL", "Golang"],
+  }, {
+    title: "Blockchain",
+    icon: Blocks,
+    color: "from-yellow-500 to-amber-500",
+    skills: ["Solidity", "Smart Contracts", "Ethers.js", "Hardhat"],
   },
   {
     title: "Security",
@@ -53,7 +59,7 @@ const skillCategories = [
     title: "Testing",
     icon: TestTube,
     color: "from-indigo-500 to-purple-500",
-    skills: ["Jest", "Postman", "Unit Testing", "Hurl"],
+    skills: ["Jest", "Unit/integration Testing",],
   },
 ]
 

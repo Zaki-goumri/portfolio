@@ -110,17 +110,24 @@ export default function Contact() {
           <CardContent>
             <div className="space-y-4">
               <div>
-                <h4 className="text-green-400 font-semibold">Backend Developer - Portals (Freelance)</h4>
-                <p className="text-green-300 text-sm">February 2025 - May 2025</p>
+                <h4 className="text-green-400 font-semibold">Back-End Developer - Tyrhal</h4>
+                <p className="text-green-300 text-sm">Dec 2025 – Present</p>
                 <p className="text-green-300/80 text-sm mt-1">
-                  Backend services development in NestJS/PostgreSQL, processing 100k+ event records
+                  Scalable backend systems for travel-tech platform using NestJS & PostgreSQL
                 </p>
               </div>
               <div>
-                <h4 className="text-green-400 font-semibold">Full-Stack Engineer - GrowPath</h4>
-                <p className="text-green-300 text-sm">January 2025 - April 2025</p>
+                <h4 className="text-green-400 font-semibold">Backend Engineer - Ammerli</h4>
+                <p className="text-green-300 text-sm">Sep 2025 - Present</p>
                 <p className="text-green-300/80 text-sm mt-1">
-                  Student-company matching platform, 200+ internship matches achieved
+                  Comprehensive backend for delivery app with NestJS, Redis
+                </p>
+              </div>
+              <div>
+                <h4 className="text-green-400 font-semibold">Backend Developer - Portals (Freelance)</h4>
+                <p className="text-green-300 text-sm">Feb 2025 – May 2025</p>
+                <p className="text-green-300/80 text-sm mt-1">
+                  Backend services development in NestJS/PostgreSQL
                 </p>
               </div>
             </div>
@@ -136,7 +143,7 @@ export default function Contact() {
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
               <div className="text-green-300">• Node.js & NestJS</div>
               <div className="text-green-300">• PostgreSQL & MongoDB</div>
-              <div className="text-green-300">• Microservices</div>
+              <div className="text-green-300">• Redis</div>
               <div className="text-green-300">• REST API & GraphQL</div>
               <div className="text-green-300">• Docker & DevOps</div>
               <div className="text-green-300">• System Architecture</div>

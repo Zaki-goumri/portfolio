@@ -132,7 +132,7 @@ export default function HomePage() {
               <h2 className="text-green-400 text-xl font-bold mb-4 neon-text">&gt; whoami</h2>
               <p className="text-green-300 leading-relaxed">
                 My name is <span className="text-green-400 font-bold">Zakaria Goumri</span>,
-                <span className="text-green-400"> Backend Software Engineer</span> with{" "}
+                <span className="text-green-400"> Backend Software Engineer</span> and <span className="text-green-400">Web3 & Blockchain Enthusiast</span> with{" "}
                 <span className="text-green-400">2+ years of experience</span> building scalable and high-performance
                 systems. Specialized in <span className="text-green-400">NestJS, PostgreSQL, and GraphQL</span>, I
                 have worked on projects involving REST API development, modular architectures, and event-driven systems.

@@ -12,31 +12,17 @@ import {
 } from "lucide-react";
 import { Footer } from "@/components/footer";
 
-const upcomingArticles = [
-  {
-    title:
-      "Designing Data-Intensive Applications – A Summary of Reliability, Scalability, and Maintainability",
-    description:
-      "A concise breakdown of key concepts from 'Designing Data-Intensive Applications', focusing on building systems that are reliable, scalable, and maintainable.",
-    estimatedDate: "Published",
-    link: "https://dev.to/zakigoumri/designing-data-intensive-applications-a-summary-of-reliability-scalability-and-maintainability-397e",
-    topics: [
-      "System Design",
-      "Reliability",
-      "Scalability",
-      "Maintainability",
-      "Architecture",
-    ],
-  },
-  {
-    title: "GraphQL Deep Dive: How It Really Works Beyond the Basics ",
-    description:
-      "explain advanced graphql patterns how it works how the engine parse it how it goes over tcp http udpb and even websocket via subscription",
-    estimatedDate: "Published",
-    link: "https://dev.to/zakigoumri/graphql-deep-dive-how-it-really-works-beyond-the-basics-5dia",
-    topics: ["GraphQL", "http", "AST", "Tcp", "udp"],
-  },
-];
+import { useEffect, useState } from "react";
+
+interface Article {
+  id: number;
+  title: string;
+  description: string;
+  url: string;
+  published_at: string;
+  tag_list: string[];
+  readable_publish_date: string;
+}
 
 const writingTopics = [
   "Backend Architecture Patterns",
@@ -44,6 +30,31 @@ const writingTopics = [
 ];
 
 export default function Articles() {
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await fetch(
+          "https://dev.to/api/articles?username=zakigoumri"
+        );
+        const data = await response.json();
+        const filteredArticles = data.filter(
+          (article: Article) =>
+            !article.description.includes("A post by Zaki-goumri")
+        );
+        setArticles(filteredArticles);
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
+  }, []);
+
   return (
     <div className="min-h-screen bg-black p-4 scan-lines">
       <div className="max-w-6xl mx-auto">
@@ -89,53 +100,57 @@ export default function Articles() {
           </CardContent>
         </Card>
 
-        {/* Upcoming Articles */}
+        {/* Articles */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-green-400 mb-6">
             My Articles
           </h2>
-          <div className="space-y-6">
-            {upcomingArticles.map((article, index) => (
-              <Card
-                key={index}
-                className="bg-gray-900/50 border-green-500/30 hover:border-green-400 transition-all duration-300"
-              >
-                <CardHeader>
-                  <CardTitle className="text-green-400 text-lg">
-                    {article.title}
-                  </CardTitle>
-                  <div className="flex items-center gap-2 text-green-300/70 text-sm">
-                    <Clock className="w-4 h-4" />
-                    {article.estimatedDate}
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-green-300 leading-relaxed">
-                    {article.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {article.topics.map((topic, topicIndex) => (
-                      <span
-                        key={topicIndex}
-                        className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm border border-green-500/30"
-                      >
-                        {topic}
-                      </span>
-                    ))}
-                  </div>
-                  <Link
-                    href={article.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    Read on Dev.to
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          {loading ? (
+            <div className="text-green-300">Loading articles...</div>
+          ) : (
+            <div className="space-y-6">
+              {articles.map((article) => (
+                <Card
+                  key={article.id}
+                  className="bg-gray-900/50 border-green-500/30 hover:border-green-400 transition-all duration-300"
+                >
+                  <CardHeader>
+                    <CardTitle className="text-green-400 text-lg">
+                      {article.title}
+                    </CardTitle>
+                    <div className="flex items-center gap-2 text-green-300/70 text-sm">
+                      <Clock className="w-4 h-4" />
+                      {article.readable_publish_date}
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-green-300 leading-relaxed">
+                      {article.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {article.tag_list.map((tag, index) => (
+                        <span
+                          key={index}
+                          className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full text-sm border border-green-500/30"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <Link
+                      href={article.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                      Read on Dev.to
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Writing Topics */}
