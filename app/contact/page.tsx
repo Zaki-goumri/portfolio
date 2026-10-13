@@ -29,8 +29,8 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-green-400 mb-4 neon-text">Thank you for visiting my portfolio</h2>
             <p className="text-green-300 text-lg leading-relaxed">
               Feel free to contact me for any questions or future collaboration opportunities. I'm open to backend
-              development opportunities, system architecture projects, and innovative projects using Node.js, NestJS,
-              and modern technologies.
+              development, DevOps, and cloud infrastructure opportunities, as well as projects using NestJS, Go, and
+              modern technologies.
             </p>
           </CardContent>
         </Card>
@@ -110,24 +110,31 @@ export default function Contact() {
           <CardContent>
             <div className="space-y-4">
               <div>
-                <h4 className="text-green-400 font-semibold">Back-End Developer - Tyrhal</h4>
+                <h4 className="text-green-400 font-semibold">Backend Developer (DevOps &amp; AI) - Tyrhal</h4>
                 <p className="text-green-300 text-sm">Dec 2025 – Present</p>
                 <p className="text-green-300/80 text-sm mt-1">
-                  Scalable backend systems for travel-tech platform using NestJS & PostgreSQL
+                  NestJS backend for a travel platform, DevOps on DigitalOcean with Docker, Kubernetes, and CI/CD
                 </p>
               </div>
               <div>
-                <h4 className="text-green-400 font-semibold">Backend Engineer - Ammerli</h4>
-                <p className="text-green-300 text-sm">Sep 2025 - Present</p>
+                <h4 className="text-green-400 font-semibold">Backend Developer - Ammerli (Freelance)</h4>
+                <p className="text-green-300 text-sm">Sep 2025 – Present</p>
                 <p className="text-green-300/80 text-sm mt-1">
-                  Comprehensive backend for delivery app with NestJS, Redis
+                  Full backend for a delivery app: NestJS, PostgreSQL, Redis, payments, and push notifications
                 </p>
               </div>
               <div>
-                <h4 className="text-green-400 font-semibold">Backend Developer - Portals (Freelance)</h4>
+                <h4 className="text-green-400 font-semibold">IT Intern, Cloud &amp; Infrastructure - Ooredoo Algeria</h4>
+                <p className="text-green-300 text-sm">Sep 2026</p>
+                <p className="text-green-300/80 text-sm mt-1">
+                  Data center, virtualization, databases, and Kubernetes in a large telecom IT department
+                </p>
+              </div>
+              <div>
+                <h4 className="text-green-400 font-semibold">Backend Developer - Portals</h4>
                 <p className="text-green-300 text-sm">Feb 2025 – May 2025</p>
                 <p className="text-green-300/80 text-sm mt-1">
-                  Backend services development in NestJS/PostgreSQL
+                  NestJS and PostgreSQL backend with real-time notifications and analytics APIs
                 </p>
               </div>
             </div>
@@ -141,12 +148,12 @@ export default function Contact() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
-              <div className="text-green-300">• Node.js & NestJS</div>
-              <div className="text-green-300">• PostgreSQL & MongoDB</div>
-              <div className="text-green-300">• Redis</div>
-              <div className="text-green-300">• REST API & GraphQL</div>
-              <div className="text-green-300">• Docker & DevOps</div>
-              <div className="text-green-300">• System Architecture</div>
+              <div className="text-green-300">• NestJS, FastAPI & Go</div>
+              <div className="text-green-300">• PostgreSQL & Redis</div>
+              <div className="text-green-300">• Background Queues & Kafka</div>
+              <div className="text-green-300">• REST API, GraphQL & gRPC</div>
+              <div className="text-green-300">• Docker, Kubernetes & CI/CD</div>
+              <div className="text-green-300">• Cloud & Infrastructure</div>
             </div>
           </CardContent>
         </Card>
@@ -164,9 +171,9 @@ export default function Contact() {
               <br />
               [✓] LinkedIn: linkedin.com/in/zakaria-goumri-76ab222a6/
               <br />
-              [✓] Status: Backend Software Engineer - 2+ years experience
+              [✓] Status: Backend Developer - 3+ years experience
               <br />
-              [✓] Specialties: Node.js, NestJS, PostgreSQL, Microservices
+              [✓] Specialties: NestJS, Go, PostgreSQL, DevOps, Cloud Infrastructure
               <br />
               [i] Portfolio generated on {new Date().toLocaleDateString("en-US")}
             </div>

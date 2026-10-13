@@ -47,7 +47,7 @@ export default function HomePage() {
   const terminalLines = [
     "root@goumri-terminal:~# ./start_portfolio.sh",
     "[✓] Authentication successful",
-    "[✓] Loading Backend Engineer 2025 environment",
+    "[✓] Loading Backend & DevOps 2026 environment",
     "[✓] Opening Zakaria Goumri's portfolio...",
     "",
     "System ready. Access granted.",
@@ -131,14 +131,15 @@ export default function HomePage() {
             <div className="border border-green-500/30 rounded-lg p-6 bg-gray-900/20">
               <h2 className="text-green-400 text-xl font-bold mb-4 neon-text">&gt; whoami</h2>
               <p className="text-green-300 leading-relaxed">
-                My name is <span className="text-green-400 font-bold">Zakaria Goumri</span>,
-                <span className="text-green-400"> Backend Software Engineer</span> and <span className="text-green-400">Web3 & Blockchain Enthusiast</span> with{" "}
-                <span className="text-green-400">2+ years of experience</span> building scalable and high-performance
-                systems. Specialized in <span className="text-green-400">NestJS, PostgreSQL, and GraphQL</span>, I
-                have worked on projects involving REST API development, modular architectures, and event-driven systems.
-                Currently studying at
+                My name is <span className="text-green-400 font-bold">Zakaria Goumri</span>, a
+                <span className="text-green-400"> Backend Developer</span> with{" "}
+                <span className="text-green-400">3+ years of experience</span> building scalable backend services
+                with <span className="text-green-400">NestJS, FastAPI, and Go</span>. I work on APIs, background
+                jobs, and real-time systems, and I handle the DevOps side too: Docker, Kubernetes, and CI/CD on the
+                cloud. I also like building systems from scratch, like an S3-compatible object store and a database
+                engine. I am a 4th-year student in <span className="text-green-400">Computer Systems Engineering</span> at
                 the <span className="text-green-400">Higher National School of Computer Science</span> in Sidi Bel
-                Abbès, I combine technical expertise with advanced academic training in computer science.
+                Abbès, and my goal is to work on cloud and AI infrastructure.
               </p>
             </div>
           </div>
