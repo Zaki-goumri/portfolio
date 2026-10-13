@@ -10,15 +10,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import {
-  Brain,
-  FolderOpen,
+  Cpu,
+  FolderGit2,
+  BookOpen,
+  Briefcase,
   GraduationCap,
+  ScrollText,
   Mail,
   Terminal,
   ArrowLeft,
-  FileText,
-  Computer,
-  BarChart3,
 } from "lucide-react";
 import { Footer } from "@/components/footer";
 
@@ -26,58 +26,44 @@ const dashboardItems = [
   {
     title: "Skills",
     description: "Technical skills and backend stack",
-    icon: Brain,
+    icon: Cpu,
     href: "/skills",
-    color: "from-green-400 to-emerald-500",
   },
   {
     title: "Projects",
     description: "Portfolio and achievements",
-    icon: FolderOpen,
+    icon: FolderGit2,
     href: "/projects",
-    color: "from-blue-400 to-cyan-500",
   },
   {
     title: "Articles",
     description: "Technical writing and insights",
-    icon: FileText,
+    icon: BookOpen,
     href: "/articles",
-    color: "from-indigo-400 to-purple-500",
   },
   {
     title: "Experience",
     description: "Professional background",
-    icon: BarChart3,
+    icon: Briefcase,
     href: "/experience",
-    color: "from-purple-400 to-pink-500",
   },
   {
     title: "Education",
     description: "Academic background",
     icon: GraduationCap,
     href: "/education",
-    color: "from-orange-400 to-red-500",
   },
   {
     title: "CV",
     description: "Complete resume overview",
-    icon: FileText,
+    icon: ScrollText,
     href: "/cv",
-    color: "from-cyan-400 to-blue-500",
-  },
-  {
-    title: "Chat",
-    description: "Ask my chatbot anything",
-    icon: Terminal,
-    href: "/chat",
-    color: "from-pink-400 to-rose-500",
   },
   {
     title: "Contact",
     description: "Get in touch",
     icon: Mail,
     href: "/contact",
-    color: "from-yellow-400 to-orange-500",
   },
 ];
 
@@ -120,9 +106,9 @@ export default function Dashboard() {
                 <CardHeader className="pb-3">
                   <div className="flex items-center gap-3">
                     <div
-                      className={`p-3 rounded-lg bg-gradient-to-r ${item.color} group-hover:scale-110 transition-transform duration-300`}
+                      className="p-3 rounded-md border border-green-500/40 bg-green-500/5 group-hover:border-green-400 transition-colors duration-300"
                     >
-                      <item.icon className="w-6 h-6 text-white" />
+                      <item.icon className="w-6 h-6 text-green-400" />
                     </div>
                     <div>
                       <CardTitle className="text-green-400 group-hover:text-green-300 transition-colors">

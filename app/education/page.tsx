@@ -86,8 +86,8 @@ export default function Education() {
         <Card className="mb-8 bg-gradient-to-r from-green-900/20 to-blue-900/20 border-green-500/50">
           <CardHeader>
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg bg-gradient-to-r from-green-500 to-blue-500 flex-shrink-0">
-                <GraduationCap className="w-6 h-6 text-white" />
+              <div className="p-3 rounded-md border border-green-500/40 bg-green-500/5 flex-shrink-0">
+                <GraduationCap className="w-6 h-6 text-green-400" />
               </div>
               <div className="flex-1">
                 <CardTitle className="text-green-400 text-xl mb-2">{education.degree}</CardTitle>

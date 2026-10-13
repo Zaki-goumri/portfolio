@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Code, Database, Cloud, Shield, TestTube, Monitor, Blocks } from "lucide-react"
+import { ArrowLeft, Code, Database, Cloud, Shield, TestTube, Monitor } from "lucide-react"
 import { Footer } from "@/components/footer"
 
 
@@ -16,50 +16,46 @@ const skillCategories = [
     color: "from-blue-500 to-cyan-500",
     skills: [
       "NestJS",
-      "Node.js",
       "FastAPI",
-      "Express.js",
       "REST API",
       "Microservices",
-      "Monolithic",
-      "WebSockets",
+      "Background Queues",
+      "Redis",
+      "Kafka",
       "GraphQL",
+      "gRPC",
+      "WebSockets / SSE",
     ],
   },
   {
     title: "Databases",
     icon: Database,
     color: "from-green-500 to-emerald-500",
-    skills: ["PostgreSQL", "MongoDB", "Redis", "Prisma ORM", "TypeORM", "Elasticsearch"],
+    skills: ["PostgreSQL", "MySQL", "Redis", "Elasticsearch", "Neo4j"],
   },
   {
     title: "DevOps & Tools",
     icon: Cloud,
     color: "from-purple-500 to-pink-500",
-    skills: ["Docker", "CI/CD", "Nginx", "Linux", "GitHub Actions", "ELK Stack", "Grafana"],
+    skills: ["Docker", "Kubernetes", "CI/CD", "DigitalOcean", "Nginx", "Linux", "Grafana"],
   },
   {
     title: "Programming Languages",
     icon: Monitor,
     color: "from-orange-500 to-red-500",
     skills: ["JavaScript", "TypeScript", "Python", "SQL", "Golang"],
-  }, {
-    title: "Blockchain",
-    icon: Blocks,
-    color: "from-yellow-500 to-amber-500",
-    skills: ["Solidity", "Smart Contracts", "Ethers.js", "Hardhat"],
   },
   {
     title: "Security",
     icon: Shield,
     color: "from-red-500 to-pink-500",
-    skills: ["JWT", "OAuth2", "API Security", "Encryption", "Hashing"],
+    skills: ["JWT", "OAuth 2.0 / PKCE", "RBAC", "API Security", "Encryption", "Hashing"],
   },
   {
     title: "Testing",
     icon: TestTube,
     color: "from-indigo-500 to-purple-500",
-    skills: ["Jest", "Unit/integration Testing",],
+    skills: ["Jest", "Unit / Integration Testing", "Testcontainers", "k6 Load Testing"],
   },
 ]
 
@@ -72,6 +68,8 @@ const principles = [
 ]
 
 const supportingSkills = ["React.js", "Next.js", "Tailwind CSS"]
+
+const aiSkills = ["LLMs", "AI Agents", "RAG", "LangChain", "Embeddings", "Vector Databases"]
 
 export default function Skills() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
@@ -93,7 +91,7 @@ export default function Skills() {
             <Code className="w-8 h-8 text-green-400" />
             <h1 className="text-3xl font-bold text-green-400 neon-text">Technical Skills</h1>
           </div>
-          <p className="text-green-300">Backend Software Engineer • 2+ years of experience</p>
+          <p className="text-green-300">Backend Developer • 3+ years of experience</p>
         </div>
 
         {/* Core Principles */}
@@ -128,9 +126,9 @@ export default function Skills() {
               <CardHeader className="pb-3">
                 <div className="flex items-center gap-3">
                   <div
-                    className={`p-3 rounded-lg bg-gradient-to-r ${category.color} group-hover:scale-110 transition-transform duration-300`}
+                    className={`p-3 rounded-md border border-green-500/40 bg-green-500/5 group-hover:scale-110 transition-transform duration-300`}
                   >
-                    <category.icon className="w-6 h-6 text-white" />
+                    <category.icon className="w-6 h-6 text-green-400" />
                   </div>
                   <CardTitle className="text-green-400 group-hover:text-green-300 transition-colors">
                     {category.title}
@@ -179,22 +177,44 @@ export default function Skills() {
           </CardContent>
         </Card>
 
+        <Card className="mb-8 bg-gray-900/50 border-green-500/30">
+          <CardHeader>
+            <CardTitle className="text-green-400">AI (Supporting)</CardTitle>
+            <CardDescription className="text-green-300/80">
+              Applied AI features I build when a project needs them, not my main focus
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-3">
+              {aiSkills.map((skill, index) => (
+                <Badge
+                  key={index}
+                  className="bg-blue-500/20 text-blue-300 border border-blue-500/30 px-3 py-1"
+                  variant="outline"
+                >
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
         {/* Terminal Output */}
         <div className="border border-green-500/30 rounded-lg p-4 bg-gray-900/20">
           <div className="text-green-400 text-sm font-mono">
             <div>zakaria@portfolio:~$ skills --summary --experience</div>
             <div className="text-green-300 mt-1">
-              [✓] Backend Software Engineer - 2+ years experience
+              [✓] Backend Developer - 3+ years experience
               <br />
-              [✓] Specialization: Node.js, NestJS, PostgreSQL
+              [✓] Specialization: NestJS, FastAPI, Go, PostgreSQL
               <br />
-              [✓] Architecture: Microservices, REST APIs, Real-time systems
+              [✓] Architecture: Microservices, Event-driven & Real-time systems
               <br />
-              [✓] Performance: Sub-200ms API responses, 100k+ records processing
+              [✓] Async: Background queues, Redis, Kafka
               <br />
-              [✓] DevOps: Docker, CI/CD, Cloud deployment (AWS)
+              [✓] DevOps: Docker, Kubernetes, CI/CD, DigitalOcean
               <br />
-              [✓] Monitoring: ELK Stack, Grafana, System optimization
+              [✓] Testing: Jest unit & integration tests, k6 load testing
             </div>
           </div>
         </div>

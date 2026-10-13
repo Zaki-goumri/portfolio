@@ -7,51 +7,69 @@ import { ArrowLeft, Briefcase, Calendar, MapPin, TrendingUp } from "lucide-react
 import { Footer } from "@/components/footer"
 
 const experiences = [
-
-   {
-    title: "Back-End Engineer",
+  {
+    title: "Backend Developer (DevOps & AI)",
     company: "Tyrhal (ترحال)",
-    type: "Production System · Remote",
+    type: "Remote",
     period: "Dec 2025 – Present",
     achievements: [
-      "Designed and built scalable backend services using NestJS for travel packages, agencies, bookings, and users",
+      "Built and maintain the NestJS backend of a travel platform: 50+ endpoints for packages, agencies, bookings, and users",
+      "Designed the data layer with Prisma and PostgreSQL, with optimized queries for filtering and search",
+      "Used Redis pub/sub to stream real-time events to clients (CRM updates, PDF export progress)",
+      "Built background workers for bookings, notifications, emails, PDF export, and translation, plus cron schedulers",
       "Implemented approval workflows and content moderation for agencies and travel packages",
-      "Built package availability and pricing logic (available, on-discount, unavailable) with strong validation rules",
-      "Developed optimized PostgreSQL queries and Prisma data models for high-performance filtering and search",
-      "Worked on production-grade API endpoints used by real customers and travel agencies",
+      "Owned the DevOps side on DigitalOcean: Docker images and CI/CD pipelines to the DO registry for dev, staging, and prod",
+      "Wrote Kubernetes manifests for the API, PostgreSQL, Valkey, and MinIO",
+      "Wrote unit and integration tests with Jest and Testcontainers, ran k6 load tests and Trivy/Gitleaks security scans",
+      "Designed AI-driven dynamic pricing and an LLM-powered Package Agent, served by FastAPI microservices",
     ],
-    technologies: ["NestJS", "TypeScript", "PostgreSQL", "Prisma", "REST APIs", "System Design", "DigitalOcean"],
-    color: "from-indigo-500 to-blue-600",
+    technologies: ["NestJS", "TypeScript", "PostgreSQL", "Prisma", "Redis", "Background Queues", "Docker", "Kubernetes", "CI/CD", "DigitalOcean", "Jest", "k6", "FastAPI"],
+    color: "",
   },
   {
     title: "Backend Developer",
-    company: "Portals - Event Management Platform",
-    type: "Freelance, Remote",
-    period: "Feb 2025 – May 2025",
-    achievements: [
-      "Engineered backend services in NestJS, PostgreSQL, Prisma",
-      "Implemented real-time notification system (SSE)",
-      "Designed optimized database schemas to handle high-volume concurrent traffic",
-      "Delivered analytics APIs powering dashboards for users",
-    ],
-    technologies: ["NestJS", "PostgreSQL", "Prisma", "SSE", "Docker", "GitHub Actions"],
-    color: "from-blue-500 to-cyan-500",
-  },
-
-  {
-    title: "Backend Engineer",
     company: "Ammerli",
-    type: "Freelance",
-    period: "Sep 2025 - Present",
+    type: "Freelance · Remote",
+    period: "Sep 2025 – Present",
     achievements: [
-      "Engineered comprehensive backend for a delivery and service mobile application",
-      "Built scalable architecture using NestJS, TypeORM, and PostgreSQL",
-      "Integrated Chargili payments, OTP SMS, and FCM notifications",
-      "Implemented robust infrastructure with Docker, MinIO storage, and automated backups",
-      "Optimized performance with Redis caching and conducted k6 load testing",
+      "Engineered the full backend of a delivery and service mobile application",
+      "Built a scalable architecture with NestJS, TypeORM, and PostgreSQL",
+      "Integrated Chargili payments, OTP SMS, and FCM push notifications",
+      "Set up the infrastructure with Docker, MinIO storage, and automated backups",
+      "Improved performance with Redis caching and validated it with k6 load testing",
     ],
     technologies: ["NestJS", "TypeORM", "PostgreSQL", "Redis", "Docker", "MinIO", "Grafana", "k6", "FCM"],
-    color: "from-purple-600 to-indigo-600",
+    color: "",
+  },
+  {
+    title: "IT Intern – Cloud & Infrastructure",
+    company: "Ooredoo Algeria",
+    type: "Ouled Fayet, Algiers",
+    period: "Sep 2026",
+    achievements: [
+      "Discovery internship in the IT department, working alongside the Cloud, Linux, Database, DevOps, Datawarehouse, and AI & BI teams",
+      "Cloud team: data center operations, VMware vSphere virtualization, SAN zoning, VDI, and network setup for client services",
+      "Database team: Oracle, PostgreSQL, and MongoDB administration, backups, access control, and monitoring",
+      "DevOps team: Docker containerization, Kubernetes orchestration, Azure DevOps CI/CD, and Grafana monitoring",
+      "AI & BI team: self-hosted Qwen model on a 6-GPU cluster, LiteLLM gateway, Langfuse observability, and a GPU-as-a-Service project",
+      "Wrote an internship report on the IT architecture and how the teams work together",
+    ],
+    technologies: ["VMware vSphere", "SAN", "Kubernetes", "Docker", "Oracle", "PostgreSQL", "Grafana", "LiteLLM"],
+    color: "",
+  },
+  {
+    title: "Backend Developer",
+    company: "Portals",
+    type: "Remote",
+    period: "Feb 2025 – May 2025",
+    achievements: [
+      "Designed a scalable backend architecture with NestJS, PostgreSQL, and Prisma",
+      "Implemented real-time notifications with Server-Sent Events (SSE)",
+      "Designed database schemas built for concurrent traffic",
+      "Delivered analytics APIs powering dashboards and reporting",
+    ],
+    technologies: ["NestJS", "PostgreSQL", "Prisma", "SSE", "Docker", "CI/CD"],
+    color: "",
   },
 ]
 
@@ -126,7 +144,7 @@ export default function Experience() {
             <Briefcase className="w-8 h-8 text-green-400" />
             <h1 className="text-3xl font-bold text-green-400 neon-text">Professional Experience</h1>
           </div>
-          <p className="text-green-300">Backend Software Engineer • 2+ years of experience</p>
+          <p className="text-green-300">Backend Developer • 3+ years of experience</p>
         </div>
 
         {/* Professional Experience */}
@@ -140,8 +158,8 @@ export default function Experience() {
             >
               <CardHeader>
                 <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg bg-gradient-to-r ${exp.color} flex-shrink-0`}>
-                    <Briefcase className="w-6 h-6 text-white" />
+                  <div className={`p-3 rounded-md border border-green-500/40 bg-green-500/5 flex-shrink-0`}>
+                    <Briefcase className="w-6 h-6 text-green-400" />
                   </div>
                   <div className="flex-1">
                     <CardTitle className="text-green-400 text-xl mb-2">{exp.title}</CardTitle>
@@ -210,8 +228,8 @@ export default function Experience() {
             >
               <CardHeader>
                 <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg bg-gradient-to-r ${hackathon.color} flex-shrink-0`}>
-                    <TrendingUp className="w-6 h-6 text-white" />
+                  <div className={`p-3 rounded-md border border-green-500/40 bg-green-500/5 flex-shrink-0`}>
+                    <TrendingUp className="w-6 h-6 text-green-400" />
                   </div>
                   <div className="flex-1">
                     <CardTitle className="text-green-400 text-xl mb-2">{hackathon.title}</CardTitle>
@@ -263,15 +281,17 @@ export default function Experience() {
           <div className="text-green-400 text-sm font-mono">
             <div>zakaria@portfolio:~$ experience --summary</div>
             <div className="text-green-300 mt-1">
-              [✓] 2+ years Backend Software Engineering experience
+              [✓] 3+ years of backend development experience
               <br />
-              [✓] Freelance: Event Management Platform (100k+ records, sub-200ms APIs)
+              [✓] Tyrhal: NestJS backend, DevOps on DigitalOcean, Kubernetes, AI features
               <br />
-              [✓] Academic: Student-Company Matching Platform (200+ matches)
+              [✓] Ammerli: Delivery app backend, payments, notifications, infrastructure
               <br />
-              [✓] Hackathons: Smart City & AI Security Systems
+              [✓] Ooredoo Algeria: Cloud & infrastructure internship
               <br />
-              [✓] Specialization: Scalable systems, real-time processing, microservices
+              [✓] Portals: NestJS backend, real-time notifications, analytics APIs
+              <br />
+              [✓] Focus: Backend, DevOps, cloud infrastructure
             </div>
           </div>
         </div>

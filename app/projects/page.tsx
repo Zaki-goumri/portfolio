@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, FolderOpen, ExternalLink, Github, Calendar, Users, TrendingUp, Shield, Code, Blocks, Smartphone } from "lucide-react"
+import { ArrowLeft, FolderOpen, ExternalLink, Github, Calendar, Shield, Code, Smartphone, HardDrive, Database, KeyRound } from "lucide-react"
 import { Footer } from "@/components/footer"
 
 type Project = {
@@ -24,114 +24,66 @@ type Project = {
 
 const projects: Project[] = [
   {
-    id: 10,
-    title: "Ammerli",
-    type: "Professional Project",
-    period: "2024",
-    description: "Comprehensive backend for a delivery and service mobile application, built for scale and reliability.",
+    id: 11,
+    title: "Vexo – S3-Compatible Object Store",
+    type: "Personal Project",
+    period: "2026",
+    description: "Single-node object storage server written in Go that speaks the real S3 HTTP API, so standard tools like aws-cli and boto3 work with it.",
     highlights: [
-      "Scalable NestJS architecture with TypeORM and PostgreSQL",
-      "Integrated Chargili payments, OTP SMS, and FCM notifications",
-      "Robust infrastructure with Docker, MinIO storage, and automated backups",
-      "Performance optimized with Redis caching and k6 load testing",
+      "S3 HTTP API for buckets and objects with AWS SigV4 authentication",
+      "IAM-style JSON policy engine with users, groups, and access keys",
+      "Lifecycle rules moving objects across hot, infrequent, and cold (gzip) tiers",
+      "Vue 3 web console, custom binary TCP protocol, and Docker Compose setup",
     ],
-    technologies: ["NestJS", "TypeORM", "PostgreSQL", "Redis", "Docker", "MinIO", "Grafana", "k6", "FCM"],
+    technologies: ["Go", "bbolt", "AWS SigV4", "IAM Policies", "Vue 3", "TypeScript", "Docker"],
     metrics: {
-      reliability: "Automated backups",
-      monitoring: "Grafana dashboards",
-      testing: "k6 load tested",
+      api: "S3-compatible",
+      auth: "SigV4 + IAM",
+      storage: "3 tiers",
     },
-    color: "from-purple-600 to-indigo-600",
-    icon: Smartphone,
-    demo: "https://play.google.com/store/apps/details?id=com.islam.ammerli",
-  },  
-  {
-    id: 4,
-    title: "IntelliPower – AI Security System",
-    type: "Hackathon Project",
-    period: "2024",
-    description: "IoT architecture with AI-based facial recognition for security systems.",
-    highlights: [
-      "IoT architecture design with MQTT protocols",
-      "AI-based facial recognition integration",
-      "3D sensor layout visualizations",
-      "Real-time security monitoring",
-    ],
-    technologies: ["MQTT", "IoT", "AI Face Recognition", "3D Visualization"],
-    metrics: {
-      type: "AI Security",
-      protocol: "MQTT",
-      visualization: "3D",
-    },
-    color: "from-orange-500 to-red-500",
-    icon: FolderOpen,
-    github: 'https://github.com/Nest-hackathon-app/IntelliPower-back'
+    color: "",
+    icon: HardDrive,
+    github: "https://github.com/Zaki-goumri/vexo",
   },
   {
-    id: 5,
-    title: "Qurbani Management System",
-    type: "Hackathon Project",
-    period: "Jul 2025",
-    description: "Mobile and backend platform with AI-powered sacrifice video validation, Kafka microservices, and offline-first architecture.",
+    id: 12,
+    title: "NemoBase – Database Engine From Scratch",
+    type: "Personal Project",
+    period: "2026",
+    description: "Relational database built from scratch in Go to understand how storage engines work from the inside.",
     highlights: [
-      "AI model to detect sheep presence and donor name in sacrifice videos",
-      "Automated blood blur processing before uploading to Cloudinary",
-      "Kafka-based microservices for video processing and notifications",
-      "Offline-first mobile app for donation tracking",
+      "Copy-on-write B+tree storage engine",
+      "Page-based node layout and crash-safe atomic writes",
+      "Roadmap: key-value store, secondary indexes, transactions, query language",
     ],
-    technologies: ["FastAPI", "Python", "React Native", "Kafka", "PostgreSQL", "Cloudinary", "AI/ML"],
+    technologies: ["Go", "B+tree", "Storage Engines"],
     metrics: {
-      videos: "100+ processed",
-      ai: "Sheep + donor detection",
-      architecture: "Kafka microservices",
+      language: "Go",
+      engine: "B+tree",
     },
-    color: "from-yellow-500 to-amber-500",
-    icon: FolderOpen,
-    github: 'https://github.com/Junction-Hackathon'
+    color: "",
+    icon: Database,
+    github: "https://github.com/Zaki-goumri/nemobase",
   },
   {
-    id: 6,
-    title: "PTU Backend",
-    type: "Professional Project",
-    period: "2025",
-    description: "Backend system powering PTU Learning Platform with secure authentication, role management, and performance-focused APIs.",
+    id: 13,
+    title: "Stamp – OAuth 2.0 Authorization Server for NestJS",
+    type: "Open Source Library",
+    period: "2026",
+    description: "Reusable NestJS module that turns any application into an OAuth 2.0 authorization server.",
     highlights: [
-      "Built with NestJS and PostgreSQL for scalability and maintainability",
-      "Role-based access control and secure JWT authentication",
-      "File upload support and email notifications",
-      "Optimized queries with TypeORM for fast data retrieval",
+      "Authorization Code flow with PKCE",
+      "Ready-made authorize and token endpoints",
+      "Pluggable client store so apps can use any database",
     ],
-    technologies: ["NestJS", "PostgreSQL", "TypeORM", "JWT", "Multer", "Nodemailer", "Docker"],
+    technologies: ["NestJS", "TypeScript", "OAuth 2.0", "PKCE"],
     metrics: {
-      platform: "Learning",
-      roles: "RBAC",
-      performance: "Optimized queries",
+      protocol: "OAuth 2.0",
+      security: "PKCE",
     },
-    color: "from-indigo-500 to-sky-500",
-    icon: FolderOpen,
-    github: 'https://github.com/Zaki-goumri/ptu-learning-platform-back'
-  },
-  {
-    id: 7,
-    title: "Assurini",
-    type: "Hackathon Project",
-    period: "2024",
-    description: "Next-gen insurance platform with AI accident reconstruction transforming the car accident experience.",
-    highlights: [
-      "Streamlined claims process connecting multiple insurers",
-      "AI agent for accident scene reconstruction and damage estimation",
-      "User-friendly mobile app with modern UI",
-      "Delivered complex MVP in 48 hours",
-    ],
-    technologies: ["NestJS", "TypeScript", "PostgreSQL", "TypeORM", "GraphQL", "Kafka", "Redis", "Docker"],
-    metrics: {
-      time: "48 hours",
-      ai: "Scene reconstruction",
-      platform: "Mobile + Web",
-    },
-    color: "from-teal-500 to-emerald-500",
-    icon: Shield,
-    github: "https://github.com/Zaki-goumri/future-caravan",
+    color: "",
+    icon: KeyRound,
+    github: "https://github.com/Zaki-goumri/Stamp",
   },
   {
     id: 8,
@@ -153,27 +105,6 @@ const projects: Project[] = [
     icon: Code,
     github: "https://github.com/Zaki-goumri/nestjs-chargili",
   },
-  {
-    id: 9,
-    title: "Tip Jar Blockchain",
-    type: "Web3 Project",
-    period: "2024",
-    description: "Small decentralized tip jar application allowing users to send tips via the blockchain.",
-    highlights: [
-      "Smart contract development with Solidity",
-      "Secure transaction handling on the Ethereum network",
-      "Web3 integration for wallet connection",
-    ],
-    technologies: ["Solidity", "Blockchain", "Web3", "Ethereum"],
-    metrics: {
-      type: "DApp",
-      network: "Ethereum",
-    },
-    color: "from-yellow-500 to-amber-500",
-    icon: Blocks,
-    github: "https://github.com/Zaki-goumri/Tip-jar-blokchain",
-  },
-  
 ] as const;
 
 export default function Projects() {
@@ -194,7 +125,7 @@ export default function Projects() {
             <FolderOpen className="w-8 h-8 text-green-400" />
             <h1 className="text-3xl font-bold text-green-400 neon-text">Projects Portfolio</h1>
           </div>
-          <p className="text-green-300">Professional projects, academic work, and hackathon achievements</p>
+          <p className="text-green-300">Systems and backend projects</p>
         </div>
 
         {/* Projects Grid */}
@@ -206,8 +137,8 @@ export default function Projects() {
             >
               <CardHeader>
                 <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg bg-gradient-to-r ${project.color} flex-shrink-0`}>
-                    <project.icon className="w-6 h-6 text-white" />
+                  <div className={`p-3 rounded-md border border-green-500/40 bg-green-500/5 flex-shrink-0`}>
+                    <project.icon className="w-6 h-6 text-green-400" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-start justify-between mb-2">
@@ -305,7 +236,7 @@ export default function Projects() {
                 <div className="text-green-300 text-sm">Total Projects</div>
               </div>
                <div className="text-center">
-                <div className="text-3xl font-bold text-orange-400">2+</div>
+                <div className="text-3xl font-bold text-orange-400">3+</div>
                 <div className="text-green-300 text-sm">Years Experience</div>
               </div>
             </div>
@@ -319,13 +250,9 @@ export default function Projects() {
             <div className="text-green-300 mt-1">
               [✓] {projects.length} projects documented and deployed
               <br />
-              [✓] Professional: Event Management Platform (100k+ users)
+              [✓] Systems: S3-compatible object store, database engine, OAuth 2.0 server
               <br />
-              [✓] Academic: Student-Company Matching (200+ matches)
-              <br />
-              [✓] Hackathons: Smart City & AI Security Systems
-              <br />
-              [✓] Tech Stack: NestJS, Node, PostgreSQL, MongoDB, Docker
+              [✓] Tech Stack: Go, NestJS, TypeScript, Docker
               <br />
               [✓] GitHub: github.com/Zaki-goumri
             </div>
